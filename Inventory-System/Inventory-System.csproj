@@ -103,5 +103,8 @@
     <Folder Include="Services\Database\" />
     <Folder Include="UI\PC\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Scripts\database.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
