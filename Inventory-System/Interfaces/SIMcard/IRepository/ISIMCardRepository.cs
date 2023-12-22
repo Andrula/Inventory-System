@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_System.Data.Repositories
+namespace Inventory_System.Interfaces.SIMcard.IRepository
 {
     public interface ISIMCardRepository
     {
