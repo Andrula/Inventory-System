@@ -1,4 +1,5 @@
 ﻿using Inventory_System.Data.Model.Device.SIM_card;
+using Inventory_System.Interfaces.SIMcard.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

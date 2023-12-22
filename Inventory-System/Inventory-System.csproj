@@ -76,9 +76,11 @@
     <Compile Include="Data\Repositories\SIM\SIMCardRepository.cs" />
     <Compile Include="Data\Repositories\SIM\SIMTypeRepository.cs" />
     <Compile Include="Interfaces\PCRepository\IPcRepository.cs" />
-    <Compile Include="Interfaces\SIMCardRepository\ISIMCardRepository.cs" />
-    <Compile Include="Interfaces\SIMCardRepository\ISIMCardTypeRepository.cs" />
+    <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardRepository.cs" />
+    <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardTypeRepository.cs" />
+    <Compile Include="Interfaces\SIMcard\IService\ISIMCardTypeService.cs" />
     <Compile Include="Services\Configurations\SysConfig.cs" />
+    <Compile Include="Services\Service\SIM-card\SIMCardTypeService.cs" />
     <Compile Include="UI\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
