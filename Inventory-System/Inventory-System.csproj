@@ -72,10 +72,12 @@
     <Compile Include="Data\Model\Device\PC\pcram.cs" />
     <Compile Include="Data\Model\Device\SIM-card\simcard.cs" />
     <Compile Include="Data\Model\Device\SIM-card\simtype.cs" />
-    <Compile Include="Data\Repositories\PcRepository.cs" />
+    <Compile Include="Data\Repositories\PC\PcRepository.cs" />
+    <Compile Include="Data\Repositories\SIM\SIMCardRepository.cs" />
+    <Compile Include="Data\Repositories\SIM\SIMTypeRepository.cs" />
     <Compile Include="Interfaces\PCRepository\IPcRepository.cs" />
-    <Compile Include="Interfaces\SIMCardRepository\SIMCardRepository.cs" />
-    <Compile Include="Interfaces\SIMCardRepository\SIMCardTypeRepository.cs" />
+    <Compile Include="Interfaces\SIMCardRepository\ISIMCardRepository.cs" />
+    <Compile Include="Interfaces\SIMCardRepository\ISIMCardTypeRepository.cs" />
     <Compile Include="Services\Configurations\SysConfig.cs" />
     <Compile Include="UI\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -112,6 +114,8 @@
     <Folder Include="Assets\Styles\" />
     <Folder Include="Data\Model\Device\Phone\" />
     <Folder Include="Data\Model\Device\Tablet\" />
+    <Folder Include="Data\Repositories\Phone\" />
+    <Folder Include="Data\Repositories\Tablet\" />
     <Folder Include="UI\PC\" />
   </ItemGroup>
   <ItemGroup>

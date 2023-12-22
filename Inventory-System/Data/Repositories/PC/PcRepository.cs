@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_System.Data.Repositories
+namespace Inventory_System.Data.Repositories.PC
 {
     public class PcRepository : IPcRepository
     {
@@ -18,24 +18,7 @@ namespace Inventory_System.Data.Repositories
         }
         public pc GetById(int pcID)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("SELECT * FROM Devices WHERE Id = @deviceId", connection))
-                {
-                    command.Parameters.AddWithValue("@deviceId", pcID);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return MapToDevice(reader);
-                        }
-                    }
-                }
-            }
-            return null; // If the device with the specified ID is not found
+            throw new NotImplementedException();
         }
 
         public void Add(pc pc)

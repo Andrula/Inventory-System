@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_System.Data.Repositories
 {
-    public interface SIMCardTypeRepository
+    public interface ISIMCardTypeRepository
     {
         Task<simtype> GetByIdAsync(int simtypeID);
         Task<IEnumerable<simtype>> GetAllAsync();
