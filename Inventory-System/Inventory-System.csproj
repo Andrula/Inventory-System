@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Data\Model\Device\PC\pc.cs" />
+    <Compile Include="Data\Model\Device\PC\pcmodel.cs" />
+    <Compile Include="Data\Model\Device\PC\pcnet.cs" />
+    <Compile Include="Data\Model\Device\PC\pcos.cs" />
+    <Compile Include="Data\Model\Device\PC\pcram.cs" />
+    <Compile Include="Data\Model\Device\SIM-card\simcard.cs" />
+    <Compile Include="Data\Model\Device\SIM-card\simtype.cs" />
+    <Compile Include="Services\Configurations\SysConfig.cs" />
     <Compile Include="UI\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,12 +106,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Styles\" />
-    <Folder Include="Command\" />
-    <Folder Include="Data\Model\" />
+    <Folder Include="Data\Model\Device\Phone\" />
+    <Folder Include="Data\Model\Device\Tablet\" />
     <Folder Include="Data\Repository\" />
-    <Folder Include="Services\Configurations\" />
-    <Folder Include="Services\Database\" />
     <Folder Include="UI\PC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Services\Database\database.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
