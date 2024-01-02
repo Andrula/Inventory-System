@@ -64,7 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Data\Model\Device\PC\pc.cs" />
     <Compile Include="Data\Model\Device\PC\pcmodel.cs" />
     <Compile Include="Data\Model\Device\PC\pcnet.cs" />
@@ -72,15 +72,15 @@
     <Compile Include="Data\Model\Device\PC\pcram.cs" />
     <Compile Include="Data\Model\Device\SIM-card\simcard.cs" />
     <Compile Include="Data\Model\Device\SIM-card\simtype.cs" />
-    <Compile Include="Data\Repositories\PC\PcRepository.cs" />
-    <Compile Include="Data\Repositories\SIM\SIMCardRepository.cs" />
-    <Compile Include="Data\Repositories\SIM\SIMTypeRepository.cs" />
-    <Compile Include="Interfaces\PCRepository\IPcRepository.cs" />
+    <Compile Include="DataAccess\Repositories\PC\PcRepository.cs" />
+    <Compile Include="DataAccess\Repositories\SIM\SIMCardRepository.cs" />
+    <Compile Include="DataAccess\Repositories\SIM\SIMTypeRepository.cs" />
+    <Compile Include="Interfaces\PC\IPcRepository.cs" />
     <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardRepository.cs" />
     <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardTypeRepository.cs" />
     <Compile Include="Interfaces\SIMcard\IService\ISIMCardTypeService.cs" />
-    <Compile Include="Services\Configurations\SysConfig.cs" />
-    <Compile Include="Services\Service\SIM-card\SIMCardTypeService.cs" />
+    <Compile Include="Services\ConfigurationsService\SysConfig.cs" />
+    <Compile Include="DataAccess\Services\SIM-card\SIMCardTypeService.cs" />
     <Compile Include="UI\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -114,14 +114,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Styles\" />
+    <Folder Include="DataAccess\Repositories\Phone\" />
+    <Folder Include="DataAccess\Repositories\Tablet\" />
     <Folder Include="Data\Model\Device\Phone\" />
     <Folder Include="Data\Model\Device\Tablet\" />
-    <Folder Include="Data\Repositories\Phone\" />
-    <Folder Include="Data\Repositories\Tablet\" />
+    <Folder Include="Interfaces\Phone\" />
+    <Folder Include="Interfaces\Tablet\" />
     <Folder Include="UI\PC\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Services\Database\database.sql" />
+    <Content Include="DatabaseScripts\Schema\Create_Database.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
