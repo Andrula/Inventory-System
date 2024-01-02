@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_System.Services.Service.SIM_card
+namespace Inventory_System.DataAccess.Services.SIMcard
 {
     public class SIMCardTypeService : ISIMCardTypeService
     {
