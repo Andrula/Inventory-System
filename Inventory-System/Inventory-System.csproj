@@ -79,8 +79,9 @@
     <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardRepository.cs" />
     <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardTypeRepository.cs" />
     <Compile Include="Interfaces\SIMcard\IService\ISIMCardTypeService.cs" />
-    <Compile Include="Services\ConfigurationsService\SysConfig.cs" />
+    <Compile Include="Services\SysConfig.cs" />
     <Compile Include="DataAccess\Services\SIM-card\SIMCardTypeService.cs" />
+    <Compile Include="Services\Connector.cs" />
     <Compile Include="UI\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
