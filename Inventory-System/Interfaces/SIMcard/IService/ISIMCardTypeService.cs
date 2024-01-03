@@ -9,10 +9,10 @@ namespace Inventory_System.Interfaces.SIMcard.IService
 {
     public interface ISIMCardTypeService
     {
-        Task<IEnumerable<simtype>> GetAllDevicesAsync();
-        Task<simtype> GetDeviceByIdAsync(int simtypeid);
-        Task AddDeviceAsync(simtype simtype);
-        Task UpdateDeviceAsync(simtype dsimtype);
-        Task DeleteDeviceAsync(int simtypeID);
+        Task<IEnumerable<simtype>> GetAllSIMTypeAsync();
+        Task<simtype> GetSIMTypeByIdAsync(int simtypeid);
+        Task AddSIMTypeAsync(simtype simtype);
+        Task UpdateSIMTypeAsync(simtype dsimtype);
+        Task DeleteSIMTypeAsync(int simtypeID);
     }
 }

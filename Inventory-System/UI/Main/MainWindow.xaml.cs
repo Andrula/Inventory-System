@@ -25,7 +25,7 @@ namespace Inventory_System
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CreateNewSIMType_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -8,14 +8,29 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Top" Height="49" Grid.Row="1" Grid.Column="0" Width="73"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <!-- Labels -->
+            <Label Content="Type:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,20,0,0"/>
+            <Label Content="Active To:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"/>
+            <Label Content="Active From:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <!-- Textboxes and DatePickers -->
+            <TextBox x:Name="TypeTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,20,0,0" Width="100px"/>
+            <DatePicker x:Name="ActiveToDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,0"/>
+            <DatePicker x:Name="ActiveFromDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <!-- Button to Create New SIM Type -->
+            <Button Content="Create New SIM Type" VerticalAlignment="Top" Margin="20,20,363,0" Click="CreateNewSIMType_Click"/>
+        </StackPanel> 
+       
     </Grid>
 </Window>

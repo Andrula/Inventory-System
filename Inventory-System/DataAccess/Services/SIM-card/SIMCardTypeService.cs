@@ -16,31 +16,40 @@ namespace Inventory_System.DataAccess.Services.SIMcard
 
         public async Task<IEnumerable<simtype>> GetAllAsync()
         {
-            return await _simTypeRepository.GetAllAsync();
+            return await _simTypeRepository.GetAllSIMTypeAsync();
         }
 
-        public Task AddDeviceAsync(simtype simtype)
+        public async Task AddSIMTypeAsync(simtype simtype)
+        {
+            if (string.IsNullOrEmpty(simtype.type))
+            {
+                throw new ArgumentException("SIM type must have a non-empty name.");
+            }
+
+            if (simtype.active_from >= simtype.active_to)
+            {
+                throw new ArgumentException("Active from date must be before the active to date.");
+            }
+            await _simTypeRepository.AddSIMTypeAsync(simtype);
+        }
+
+        public Task DeleteSIMTypeAsync(int simtypeID)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteDeviceAsync(int simtypeID)
+
+        public Task<IEnumerable<simtype>> GetAllSIMTypeAsync()
         {
             throw new NotImplementedException();
         }
 
-
-        public Task<IEnumerable<simtype>> GetAllDevicesAsync()
+        public Task<simtype> GetSIMTypeByIdAsync(int simtypeid)
         {
             throw new NotImplementedException();
         }
 
-        public Task<simtype> GetDeviceByIdAsync(int simtypeid)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateDeviceAsync(simtype dsimtype)
+        public Task UpdateSIMTypeAsync(simtype dsimtype)
         {
             throw new NotImplementedException();
         }

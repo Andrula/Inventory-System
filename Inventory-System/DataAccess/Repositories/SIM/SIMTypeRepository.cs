@@ -1,10 +1,13 @@
 ﻿using Inventory_System.Data.Model.Device.SIM_card;
 using Inventory_System.Interfaces.SIMcard.IRepository;
+using Inventory_System.Services;
+using Inventory_System.Services.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,20 +15,25 @@ namespace Inventory_System.Data.Repositories.SIM
 {
     public class SIMTypeRepository : ISIMCardTypeRepository
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["InventoryDatabase"].ConnectionString;
-        public async Task<IEnumerable<simtype>> GetAllAsync()
+        private Connector connector;
+        public SIMTypeRepository()
+        {
+            connector = new Connector(SysConfig.GetConnectionString);     
+        }
+
+        public async Task<IEnumerable<simtype>> GetAllSIMTypeAsync()
         {
             List<simtype> simtypes = new List<simtype>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connector.ToString()))
             {
-                connection.Open();
+                await connection.OpenAsync();
 
                 using (SqlCommand command = new SqlCommand(GetAll, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
+                        while (await reader.ReadAsync())
                         {
                             simtypes.Add(MapToSimType(reader));
                         }
@@ -36,23 +44,39 @@ namespace Inventory_System.Data.Repositories.SIM
             return simtypes;
         }
 
-        public async Task AddAsync(simtype simtype)
+        public async Task AddSIMTypeAsync(simtype simtype)
+        {
+            try
+            {
+                List<SqlParameter> sqlParameters = new List<SqlParameter>
+                {
+                    new SqlParameter("@TYPE",simtype.type),
+                    new SqlParameter("@ACTIVE_TO",simtype.active_to),
+                    new SqlParameter("@ACTIVE_FROM", simtype.active_from)
+                };
+
+                connector.OpenConnection();
+                connector.InsertUpdate(InsertSIMType, sqlParameters);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task DeleteIMTypeAsync(int simtypeID)
         {
             throw new NotImplementedException();
         }
 
-        public async Task DeleteAsync(int simtypeID)
+
+        public async Task<simtype> GetIMTypeByIdAsync(int simtypeID)
         {
             throw new NotImplementedException();
         }
 
-
-        public async Task<simtype> GetByIdAsync(int simtypeID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task UpdateAsync(simtype simtype)
+        public async Task UpdateIMTypeAsync(simtype simtype)
         {
             throw new NotImplementedException();
         }
@@ -77,7 +101,14 @@ namespace Inventory_System.Data.Repositories.SIM
       ,[active_to]
   FROM [Polinventar].[dbo].[simtype]";
 
-
+        private const string InsertSIMType = @"INSERT INTO [dbo].[simtype]
+  ([type]
+  ,[active_from]
+  ,[active_to])
+  VALUES
+  (@TYPE
+  , @ACTIVE_FROM
+  , @ACTIVE_TO)";
         #endregion
     }
 }
