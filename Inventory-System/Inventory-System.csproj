@@ -121,6 +121,8 @@
     <Folder Include="Interfaces\Phone\" />
     <Folder Include="Interfaces\Tablet\" />
     <Folder Include="UI\PC\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseScripts\Schema\Create_Database.sql" />
