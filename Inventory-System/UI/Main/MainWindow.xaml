@@ -27,9 +27,9 @@
             <DatePicker x:Name="ActiveToDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,0"/>
             <DatePicker x:Name="ActiveFromDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <!-- Button to Create New SIM Type -->
-            <Button Content="Create New SIM Type" VerticalAlignment="Top" Margin="20,20,363,0" Click="CreateNewSIMType_Click"/>
+            <Button Content="Create New SIM Type" VerticalAlignment="Top" Margin="20,20" Click="CreateNewSIMType_Click"/>
         </StackPanel> 
        
     </Grid>
