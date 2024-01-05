@@ -9,7 +9,7 @@ namespace Inventory_System.Services.Configurations
 {
     public static class SysConfig
     {
-        public static string GetConnectionString
+        public static string ConnectionString
         {
             get { return ConfigurationManager.ConnectionStrings["ConString"].ConnectionString; }
         }
