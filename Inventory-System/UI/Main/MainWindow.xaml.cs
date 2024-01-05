@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory_System.UI.SIM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,7 @@ namespace Inventory_System
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void CreateNewSIMType_Click(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = new SIMTypeViewModel();
         }
     }
 }
