@@ -3,10 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Inventory_System"
+        xmlns:vm="clr-namespace:Inventory_System.UI.SIM"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:SIMTypeViewModel/>
+    </Window.DataContext>
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <!-- Labels -->
+            <Label Content="Type:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,20,0,0"/>
+            <Label Content="Active To:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"/>
+            <Label Content="Active From:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <!-- Textboxes and DatePickers -->
+            <TextBox x:Name="TypeTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,20,0,0" Width="100px" Text="{Binding Type, Mode=TwoWay}"/>
+            <DatePicker x:Name="ActiveToDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,0" SelectedDate="{Binding ActiveTo, Mode=TwoWay}"/>
+            <DatePicker x:Name="ActiveFromDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" SelectedDate="{Binding ActiveFrom, Mode=TwoWay}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <!-- Button to Create New SIM Type -->
+            <Button Content="Create New SIM Type" VerticalAlignment="Top" Margin="20,20" Command="{Binding CreateNewSIMTypeCommand}" CommandParameter="{Binding Path=., ElementName=TypeTextBox}"/>
+        </StackPanel> 
+       
     </Grid>
 </Window>
