@@ -5,6 +5,7 @@ using Inventory_System.DataAccess.Services.SIMcard;
 using Inventory_System.Interfaces.SIMcard.IRepository;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -59,6 +60,22 @@ namespace Inventory_System.UI.SIM
             }
         }
 
+        // Initiaze observable list.
+
+        private ObservableCollection<simtype> _SIMTypeList;
+        public ObservableCollection<simtype> SIMTypeList
+        {
+            get { return _SIMTypeList; }
+            set
+            {
+                if (_SIMTypeList != value)
+                {
+                    _SIMTypeList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public ICommand CreateNewSIMTypeCommand { get; }
 
         // Declare _SIMCardTypeService at class level
@@ -72,6 +89,14 @@ namespace Inventory_System.UI.SIM
             _SIMCardTypeService = new SIMCardTypeService(simTypeRepository);
 
             CreateNewSIMTypeCommand = new RelayCommand(CreateNewSIMType, _ => true);
+
+            // Initialize SimCardList and load data from your service
+            InitiazeSIMTypeListAsync();
+        }
+
+        private async void InitiazeSIMTypeListAsync()
+        {
+            SIMTypeList = new ObservableCollection<simtype>(await _SIMCardTypeService.GetAllSIMTypeAsync());
         }
 
         private async void CreateNewSIMType(object parameter)

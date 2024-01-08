@@ -5,6 +5,7 @@ using Inventory_System.Services.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -18,27 +19,34 @@ namespace Inventory_System.Data.Repositories.SIM
         private Connector connector;
         public SIMTypeRepository()
         {
-            connector = new Connector(SysConfig.GetConnectionString);     
+            try
+            {
+                connector = new Connector("Data Source=INTXL25010160;Initial Catalog=Polinventar;Integrated Security=True");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception during Connector initialization: {ex.Message}");
+            }
         }
 
         public async Task<IEnumerable<simtype>> GetAllSIMTypeAsync()
         {
             List<simtype> simtypes = new List<simtype>();
 
-            using (SqlConnection connection = new SqlConnection(connector.ToString()))
+            try
             {
-                await connection.OpenAsync();
+                connector.OpenConnection();
 
-                using (SqlCommand command = new SqlCommand(GetAll, connection))
+                DataTable dataTable = connector.GetData(SqlStatementGetAll);
+
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (await reader.ReadAsync())
-                        {
-                            simtypes.Add(MapToSimType(reader));
-                        }
-                    }
+                    simtypes.Add(MapToSimType(row));
                 }
+            }
+            finally
+            {
+                connector.CloseConnection();
             }
 
             return simtypes;
@@ -82,20 +90,20 @@ namespace Inventory_System.Data.Repositories.SIM
         }
 
         // Method that maps data from table to SIM type object
-        private simtype MapToSimType(SqlDataReader reader)
+        private simtype MapToSimType(DataRow row)
         {
             return new simtype
             {
-                id = Convert.ToInt32(reader["id"]),
-                type = reader["name"].ToString(),
-                active_from = reader.GetDateTime(reader.GetOrdinal("active_from")),
-                active_to = reader.GetDateTime(reader.GetOrdinal("active_to"))
+                id = Convert.ToInt32(row["id"]),
+                type = row["type"].ToString(),
+                active_from = row.Field<DateTime>("active_from"),
+                active_to = row.Field<DateTime>("active_to")
             };
         }
 
         #region SQL statements
 
-        private const string GetAll = @"SELECT [id]
+        private const string SqlStatementGetAll = @"SELECT [id]
       ,[type]
       ,[active_from]
       ,[active_to]

@@ -21,7 +21,8 @@ namespace Inventory_System.Services
 
         public void OpenConnection()
         {
-            if (Connection != null && Connection.State == System.Data.ConnectionState.Closed) 
+            Console.WriteLine($"Opening Connection. ConnectionString: {Connection.ConnectionString}");
+            if (Connection != null && Connection.State == System.Data.ConnectionState.Closed)
             {
                 Connection.Open();
             }

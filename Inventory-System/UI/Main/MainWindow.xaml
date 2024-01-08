@@ -12,29 +12,41 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <!-- Labels -->
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <!-- Labels -->
             <Label Content="Type:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,20,0,0"/>
             <Label Content="Active To:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"/>
             <Label Content="Active From:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </StackPanel>
+        
+        <!-- Textboxes and DatePickers -->
         <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <!-- Textboxes and DatePickers -->
             <TextBox x:Name="TypeTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,20,0,0" Width="100px" Text="{Binding Type, Mode=TwoWay}"/>
             <DatePicker x:Name="ActiveToDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,0" SelectedDate="{Binding ActiveTo, Mode=TwoWay}"/>
             <DatePicker x:Name="ActiveFromDatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" SelectedDate="{Binding ActiveFrom, Mode=TwoWay}"/>
         </StackPanel>
+        
+        <!-- Button to Create New SIM Type -->
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <!-- Button to Create New SIM Type -->
             <Button Content="Create New SIM Type" VerticalAlignment="Top" Margin="20,20" Command="{Binding CreateNewSIMTypeCommand}" CommandParameter="{Binding Path=., ElementName=TypeTextBox}"/>
-        </StackPanel> 
-       
+        </StackPanel>
+        
+        <!-- Data grid -->
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SIMTypeList}" CanUserAddRows="False" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Stretch" Background="Black" HorizontalAlignment="Stretch" Margin="10">
+    <DataGrid.Columns>
+        <DataGridTextColumn Header="Type" Binding="{Binding type}"/>
+                <DataGridTextColumn Header="Active From" Binding="{Binding active_from, StringFormat=\{0:d\}}" />
+                <DataGridTextColumn Header="Active To" Binding="{Binding active_to, StringFormat=\{0:d\}}" />
+    </DataGrid.Columns>
+</DataGrid>
     </Grid>
 </Window>

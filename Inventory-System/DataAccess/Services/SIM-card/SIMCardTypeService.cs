@@ -19,11 +19,6 @@ namespace Inventory_System.DataAccess.Services.SIMcard
             _simTypeRepository = simTypeRepository ?? throw new ArgumentNullException(nameof(simTypeRepository));
         }
 
-        public async Task<IEnumerable<simtype>> GetAllAsync()
-        {
-            return await _simTypeRepository.GetAllSIMTypeAsync();
-        }
-
         public async Task AddSIMTypeAsync(simtype simtype)
         {
             if (string.IsNullOrEmpty(simtype.type))
@@ -44,9 +39,9 @@ namespace Inventory_System.DataAccess.Services.SIMcard
         }
 
 
-        public Task<IEnumerable<simtype>> GetAllSIMTypeAsync()
+        public async Task<IEnumerable<simtype>> GetAllSIMTypeAsync()
         {
-            throw new NotImplementedException();
+            return await _simTypeRepository.GetAllSIMTypeAsync();
         }
 
         public Task<simtype> GetSIMTypeByIdAsync(int simtypeid)
