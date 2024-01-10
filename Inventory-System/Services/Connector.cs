@@ -58,31 +58,33 @@ namespace Inventory_System.Services
             }
         }
 
-        public DataTable GetData(string SqlQuery, List<SqlParameter> parameters = null)
+        public async Task<DataTable> SqlExecuteReaderAsync(string SqlQuery, List<SqlParameter> parameters = null)
         {
-            DataTable dataTabke = new DataTable();
+            DataTable dataTable = new DataTable();
 
             try
             {
-                SqlCommand command = new SqlCommand(SqlQuery, Connection);
-                command.CommandType = CommandType.Text;
-
-                if (parameters != null)
+                await Task.Run(() =>
                 {
-                    command.Parameters.AddRange(parameters.ToArray());
-                }
+                    SqlCommand command = new SqlCommand(SqlQuery, Connection);
+                    command.CommandType = CommandType.Text;
 
-                using (SqlDataAdapter da = new SqlDataAdapter(command))
-                {
-                    da.Fill(dataTabke);
-                }
+                    if (parameters != null && parameters.Count > 0)
+                    {
+                        command.Parameters.AddRange(parameters.ToArray());
+                    }
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(command))
+                    {
+                        da.Fill(dataTable);
+                    }
+                });
             }
             catch (Exception)
             {
-
                 throw;
             }
-            return dataTabke;
+            return dataTable;
         }
     }
 }
