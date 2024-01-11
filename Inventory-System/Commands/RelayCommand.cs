@@ -13,8 +13,9 @@ namespace Inventory_System.Command
         Func<object, bool> _canExecute;
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute)
         {
-            _execute = execute;
-            _canExecute = canExecute;
+            if (execute == null)
+                throw new ArgumentNullException("execute");
+            _execute = execute; _canExecute = canExecute;
         }
 
         public bool CanExecute(object parameter)

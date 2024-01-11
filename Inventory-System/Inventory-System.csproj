@@ -38,6 +38,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -136,6 +138,7 @@
     <Folder Include="Data\Model\Device\Tablet\" />
     <Folder Include="Interfaces\Phone\" />
     <Folder Include="Interfaces\Tablet\" />
+
     <Folder Include="UI\Views\SIM\SIMCard\" />
   </ItemGroup>
   <ItemGroup>

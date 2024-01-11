@@ -14,6 +14,11 @@ namespace Inventory_System.DataAccess.Services.SIMcard
     {
         private readonly ISIMCardTypeRepository _simTypeRepository;
 
+        public SIMCardTypeService(ISIMCardTypeRepository simTypeRepository)
+        {
+            _simTypeRepository = simTypeRepository ?? throw new ArgumentNullException(nameof(simTypeRepository));
+        }
+
         public async Task<IEnumerable<simtype>> GetAllAsync()
         {
             return await _simTypeRepository.GetAllSIMTypeAsync();
