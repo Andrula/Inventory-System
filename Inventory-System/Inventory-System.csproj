@@ -56,6 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UI\Views\SIM\SIMCardType\MakeSIMCardTypeView.xaml.cs">
+      <DependentUpon>MakeSIMCardTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\SIM\SIMCardType\SIMCardTypeListView.xaml.cs">
+      <DependentUpon>SIMCardTypeListView.xaml</DependentUpon>
+    </Compile>
     <Page Include="UI\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,6 +93,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\Views\SIM\SIMCardType\MakeSIMCardTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\SIM\SIMCardType\SIMCardTypeListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,8 +136,7 @@
     <Folder Include="Data\Model\Device\Tablet\" />
     <Folder Include="Interfaces\Phone\" />
     <Folder Include="Interfaces\Tablet\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
+    <Folder Include="UI\Views\SIM\SIMCard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseScripts\Schema\Create_Database.sql" />

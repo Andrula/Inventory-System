@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Inventory_System
+namespace Inventory_System.UI.Views.SIM.SIMCardType
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MakeSIMCardTypeView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MakeSIMCardTypeView : UserControl
     {
-        public MainWindow()
+        public MakeSIMCardTypeView()
         {
             InitializeComponent();
-        }
-
-        private void CreateNewSIMType_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MakeSIMCardTypeView_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
