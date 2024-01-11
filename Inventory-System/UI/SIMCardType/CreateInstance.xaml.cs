@@ -1,5 +1,4 @@
-﻿using Inventory_System.UI.SIM;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Inventory_System
+namespace Inventory_System.UI.SIMCardType
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateInstance.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateInstance : UserControl
     {
-        public MainWindow()
+        public CreateInstance()
         {
             InitializeComponent();
-            DataContext = new SIMTypeViewModel();
-        }
-
-        private void MakeSIMCardTypeView_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
