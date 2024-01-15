@@ -10,10 +10,10 @@ namespace Inventory_System.Interfaces.SIMcard.IRepository
 {
     public interface ISIMCardRepository
     {
-        Task<simcard> GetByIdAsync(int simcardID);
-        Task <IEnumerable<simcard>> GetAllAsync();
-        Task AddAsync(simcard simcard);
-        Task UpdateAsync(simcard simcard);
-        Task DeleteAsync(int simcardID);
+        Task<simcard> GetInstanceByIdAsync(int simcardID);
+        Task <IEnumerable<simcard>> GetAllInstancesAsync();
+        Task AddInstanceAsync(simcard simcard);
+        Task UpdateInstanceAsync(simcard simcard);
+        Task DeleteInstanceAsync(int simcardID);
     }
 }

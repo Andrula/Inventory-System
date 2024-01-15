@@ -10,27 +10,27 @@ namespace Inventory_System.Data.Repositories.SIM
 {
     public class SIMCardRepository : ISIMCardRepository
     {
-        public async Task AddAsync(simcard simcard)
+        public async Task AddInstanceAsync(simcard simcard)
         {
             throw new NotImplementedException();
         }
 
-        public async Task DeleteAsync(int simcardID)
+        public async Task DeleteInstanceAsync(int simcardID)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<simcard>> GetAllAsync()
+        public async Task<IEnumerable<simcard>> GetAllInstancesAsync()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<simcard> GetByIdAsync(int simcardID)
+        public async Task<simcard> GetInstanceByIdAsync(int simcardID)
         {
             throw new NotImplementedException();
         }
 
-        public async Task UpdateAsync(simcard simcard)
+        public async Task UpdateInstanceAsync(simcard simcard)
         {
             throw new NotImplementedException();
         }

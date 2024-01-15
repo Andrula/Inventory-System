@@ -7,13 +7,11 @@
         xmlns:views="clr-namespace:Inventory_System.UI.Views.SIM.SIMCardType"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <vm:SIMTypeViewModel/>
-    </Window.DataContext>
+
 
     <Grid>
 
         <!--<views:MakeSIMCardTypeView Loaded="MakeSIMCardTypeView_Loaded" />-->
-        <!--<views:SIMCardTypeListView Margin="10,49,-10,-49"/>-->
+        <views:SIMCardTypeListView Margin="10,49,-10,-49"/>
     </Grid>
 </Window>

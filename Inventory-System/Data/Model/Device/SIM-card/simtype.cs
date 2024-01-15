@@ -12,5 +12,10 @@ namespace Inventory_System.Data.Model.Device.SIM_card
         public string type { get; set; }
         public DateTime active_from { get; set; }
         public DateTime active_to { get; set;}
+
+        public override string ToString()
+        {
+            return $"{id} - {type} - {active_from} - {active_to}";
+        }
     }
 }

@@ -12,7 +12,13 @@ namespace Inventory_System.Data.Model.Device.SIM_card
         public string number { get; set; }
         public string PIN { get; set; }
         public string PUK { get; set; }
-
         public string ICCID { get; set; }
+
+        public simtype SIM_TYPE { get; set; }
+
+        public override string ToString()
+        {
+            return $"{id} - {number} - {PIN} - {PUK} - {ICCID} - {SIM_TYPE}"; 
+        }
     }
 }
