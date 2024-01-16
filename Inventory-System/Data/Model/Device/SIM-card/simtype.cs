@@ -9,13 +9,13 @@ namespace Inventory_System.Data.Model.Device.SIM_card
     public class simtype
     {
         public int id {  get; set; }
-        public string type { get; set; }
+        public string simType { get; set; }
         public DateTime active_from { get; set; }
         public DateTime active_to { get; set;}
 
         public override string ToString()
         {
-            return $"{id} - {type} - {active_from} - {active_to}";
+            return $"{simType}";
         }
     }
 }

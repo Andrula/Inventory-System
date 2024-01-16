@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory_System.UI.Views.SIM.SIMCard.List;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,6 @@ namespace Inventory_System
         {
             InitializeComponent();
         }
+        public SIMCardViewModel SIMCardViewModel { get; set; }
     }
 }

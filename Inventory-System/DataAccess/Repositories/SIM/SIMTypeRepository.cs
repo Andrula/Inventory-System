@@ -50,7 +50,7 @@ namespace Inventory_System.Data.Repositories.SIM
             {
                 List<SqlParameter> sqlParameters = new List<SqlParameter>
                 {
-                    new SqlParameter("@TYPE",simtype.type),
+                    new SqlParameter("@TYPE",simtype.simType),
                     new SqlParameter("@ACTIVE_TO",simtype.active_to),
                     new SqlParameter("@ACTIVE_FROM", simtype.active_from)
                 };
@@ -87,7 +87,7 @@ namespace Inventory_System.Data.Repositories.SIM
             return new simtype
             {
                 id = Convert.ToInt32(reader["id"]),
-                type = reader["name"].ToString(),
+                simType = reader["name"].ToString(),
                 active_from = reader.GetDateTime(reader.GetOrdinal("active_from")),
                 active_to = reader.GetDateTime(reader.GetOrdinal("active_to"))
             };

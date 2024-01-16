@@ -11,11 +11,15 @@ namespace Inventory_System.Command
     {
         Action<object> _execute;
         Func<object, bool> _canExecute;
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute)
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-            _execute = execute; _canExecute = canExecute;
+            this._execute = execute;
+            this._canExecute = canExecute;
+        }
+
+        public RelayCommand(Action<object> execute)
+        {
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
         }
 
         public bool CanExecute(object parameter)

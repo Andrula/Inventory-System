@@ -26,7 +26,7 @@ namespace Inventory_System.DataAccess.Services.SIMcard
 
         public async Task AddSIMTypeAsync(simtype simtype)
         {
-            if (string.IsNullOrEmpty(simtype.type))
+            if (string.IsNullOrEmpty(simtype.simType))
             {
                 throw new ArgumentException("SIM type must have a non-empty name.");
             }
