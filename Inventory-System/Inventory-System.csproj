@@ -58,18 +58,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UI\Views\SIM\SIMCardType\Insert\MakeSIMCardTypeView.xaml.cs">
+    <Compile Include="Features\SIMCard\Model\simcard.cs" />
+    <Compile Include="Features\SIMCard\Views\List\SIMCardViewModel.cs" />
+    <Compile Include="Features\SIMType\Model\simtype.cs" />
+    <Compile Include="Features\SIMType\Views\Create\MakeSIMCardTypeView.xaml.cs">
       <DependentUpon>MakeSIMCardTypeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\SIM\SIMCardType\View\SIMCardTypeListView.xaml.cs">
+    <Compile Include="Features\SIMType\Views\List\SIMCardTypeListView.xaml.cs">
       <DependentUpon>SIMCardTypeListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\SIM\SIMCardType\View\SIMCardTypeListViewModel.cs" />
-    <Compile Include="UI\Views\SIM\SIMCard\List\SIMCardView.xaml.cs">
+    <Compile Include="Features\SIMType\Views\List\SIMCardTypeListViewModel.cs" />
+    <Compile Include="Features\SIMCard\Views\List\SIMCardView.xaml.cs">
       <DependentUpon>SIMCardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\SIM\SIMCard\List\SIMCardViewModel.cs" />
-    <Page Include="UI\Main\MainWindow.xaml">
+    <Compile Include="Services\Database\Connector.cs" />
+    <Page Include="Common\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -78,35 +81,30 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Data\Model\Device\PC\pc.cs" />
-    <Compile Include="Data\Model\Device\PC\pcmodel.cs" />
-    <Compile Include="Data\Model\Device\PC\pcnet.cs" />
-    <Compile Include="Data\Model\Device\PC\pcos.cs" />
-    <Compile Include="Data\Model\Device\PC\pcram.cs" />
-    <Compile Include="Data\Model\Device\SIM-card\simcard.cs" />
-    <Compile Include="Data\Model\Device\SIM-card\simtype.cs" />
-    <Compile Include="DataAccess\Repositories\PC\PcRepository.cs" />
-    <Compile Include="DataAccess\Repositories\SIM\SIMCardRepository.cs" />
-    <Compile Include="DataAccess\Repositories\SIM\SIMTypeRepository.cs" />
-    <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardRepository.cs" />
-    <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardTypeRepository.cs" />
-    <Compile Include="Interfaces\SIMcard\IService\ISIMCardTypeService.cs" />
-    <Compile Include="Services\SysConfig.cs" />
-    <Compile Include="Services\Connector.cs" />
-    <Compile Include="UI\Common\ViewModelBase.cs" />
-    <Compile Include="UI\Main\MainWindow.xaml.cs">
+    <Compile Include="Features\PC\Model\pc.cs" />
+    <Compile Include="Features\PC\Model\pcmodel.cs" />
+    <Compile Include="Features\PC\Model\pcnet.cs" />
+    <Compile Include="Features\PC\Model\pcos.cs" />
+    <Compile Include="Features\PC\Model\pcram.cs" />
+    <Compile Include="Features\SIMCard\Repository\SIMCardRepository.cs" />
+    <Compile Include="Features\SIMType\Repository\SIMTypeRepository.cs" />
+    <Compile Include="Features\SIMCard\Repository\Interface\ISIMCardRepository.cs" />
+    <Compile Include="Features\SIMType\Repository\Interface\ISIMCardTypeRepository.cs" />
+    <Compile Include="Services\Configuration\SysConfig.cs" />
+    <Compile Include="Common\ViewModelBase.cs" />
+    <Compile Include="Common\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UI\Views\SIM\SIMCardType\Insert\MakeSIMCardTypeView.xaml">
+    <Page Include="Features\SIMType\Views\Create\MakeSIMCardTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Views\SIM\SIMCardType\View\SIMCardTypeListView.xaml">
+    <Page Include="Features\SIMType\Views\List\SIMCardTypeListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Views\SIM\SIMCard\List\SIMCardView.xaml">
+    <Page Include="Features\SIMCard\Views\List\SIMCardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,13 +136,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Styles\" />
     <Folder Include="Controls\" />
-    <Folder Include="DataAccess\Repositories\Phone\" />
-    <Folder Include="DataAccess\Repositories\Tablet\" />
-    <Folder Include="Data\Model\Device\Phone\" />
-    <Folder Include="Data\Model\Device\Tablet\" />
-    <Folder Include="Interfaces\Tablet\" />
+    <Folder Include="Features\Phone\Model\" />
+    <Folder Include="Features\SIMCard\Views\Create\" />
+    <Folder Include="Features\SIMCard\Views\Delete\" />
+    <Folder Include="Features\SIMCard\Views\Update\" />
+    <Folder Include="Features\SIMType\Views\Delete\" />
+    <Folder Include="Features\SIMType\Views\Update\" />
+    <Folder Include="Features\Tablet\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseScripts\Schema\Create_Database.sql" />
