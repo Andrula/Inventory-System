@@ -92,7 +92,6 @@
     <Compile Include="Interfaces\SIMcard\IRepository\ISIMCardTypeRepository.cs" />
     <Compile Include="Interfaces\SIMcard\IService\ISIMCardTypeService.cs" />
     <Compile Include="Services\SysConfig.cs" />
-    <Compile Include="DataAccess\Services\SIM-card\SIMCardTypeService.cs" />
     <Compile Include="Services\Connector.cs" />
     <Compile Include="UI\Common\ViewModelBase.cs" />
     <Compile Include="UI\Main\MainWindow.xaml.cs">
@@ -140,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Styles\" />
+    <Folder Include="Controls\" />
     <Folder Include="DataAccess\Repositories\Phone\" />
     <Folder Include="DataAccess\Repositories\Tablet\" />
     <Folder Include="Data\Model\Device\Phone\" />
