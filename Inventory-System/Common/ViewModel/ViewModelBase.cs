@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_System.Common
+namespace Inventory_System.Common.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

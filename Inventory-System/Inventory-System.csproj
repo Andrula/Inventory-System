@@ -58,7 +58,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\ViewModel\HomeViewModel.cs" />
+    <Compile Include="Common\ViewModel\MainViewModel.cs" />
+    <Compile Include="Common\View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Features\SIMCard\Model\simcard.cs" />
+    <Compile Include="Features\SIMCard\Views\List\SIMCardView.xaml.cs">
+      <DependentUpon>SIMCardView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Features\SIMCard\Views\List\SIMCardViewModel.cs" />
     <Compile Include="Features\SIMType\Model\simtype.cs" />
     <Compile Include="Features\SIMType\Views\Create\MakeSIMCardTypeView.xaml.cs">
@@ -68,11 +76,12 @@
       <DependentUpon>SIMCardTypeListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Features\SIMType\Views\List\SIMCardTypeListViewModel.cs" />
-    <Compile Include="Features\SIMCard\Views\List\SIMCardView.xaml.cs">
-      <DependentUpon>SIMCardView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Services\Database\Connector.cs" />
-    <Page Include="Common\MainWindow.xaml">
+    <Page Include="Common\View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common\View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -91,20 +100,20 @@
     <Compile Include="Features\SIMCard\Repository\Interface\ISIMCardRepository.cs" />
     <Compile Include="Features\SIMType\Repository\Interface\ISIMCardTypeRepository.cs" />
     <Compile Include="Services\Configuration\SysConfig.cs" />
-    <Compile Include="Common\ViewModelBase.cs" />
-    <Compile Include="Common\MainWindow.xaml.cs">
+    <Compile Include="Common\ViewModel\ViewModelBase.cs" />
+    <Compile Include="Common\View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Features\SIMCard\Views\List\SIMCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Features\SIMType\Views\Create\MakeSIMCardTypeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Features\SIMType\Views\List\SIMCardTypeListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Features\SIMCard\Views\List\SIMCardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

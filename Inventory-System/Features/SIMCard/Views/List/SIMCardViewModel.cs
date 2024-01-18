@@ -1,5 +1,5 @@
 ﻿using Inventory_System.Command;
-using Inventory_System.Common;
+using Inventory_System.Common.ViewModel;
 using Inventory_System.Data.Repositories.SIM;
 using Inventory_System.Features.SIMCard.Model;
 using System;
