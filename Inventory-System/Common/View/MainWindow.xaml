@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:viewmodels="clr-namespace:Inventory_System.Common.ViewModel"
         xmlns:view="clr-namespace:Inventory_System.Common.View"
+        xmlns:simlistview="clr-namespace:Inventory_System.Features.SIMCard.Views.List"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
             <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
                 <view:HomeView></view:HomeView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type simlistview:SIMCardViewModel}">
+                <simlistview:SIMCardView/>
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>

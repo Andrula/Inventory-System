@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Inventory_System.Common.ViewModel;
+using Inventory_System.Stores;
 
 namespace Inventory_System
 {
@@ -16,9 +17,13 @@ namespace Inventory_System
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            NavigationStore navigationStore = new NavigationStore();
+
+            navigationStore.CurrentViewModel = new HomeViewModel();
+
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(navigationStore)
             };
             MainWindow.Show();
 

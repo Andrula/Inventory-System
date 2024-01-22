@@ -10,7 +10,7 @@
         <TextBlock Text="Hej med dig" FontSize="30"></TextBlock>
 
         <StackPanel >
-            <Button Content="SIM-Card"/>
+            <Button Content="SIM-Card" Command="{Binding NavigateSIMCommand}"/>
         </StackPanel>
 
 
