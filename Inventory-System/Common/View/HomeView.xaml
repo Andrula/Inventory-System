@@ -12,7 +12,5 @@
         <StackPanel >
             <Button Content="SIM-Card" Command="{Binding NavigateSIMCommand}"/>
         </StackPanel>
-
-
     </Grid>
 </UserControl>

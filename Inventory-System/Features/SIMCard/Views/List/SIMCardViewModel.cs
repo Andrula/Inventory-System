@@ -19,11 +19,11 @@ namespace Inventory_System.Features.SIMCard.Views.List
 {
     public class SIMCardViewModel : ViewModelBase
     {
-        public ICommand NavigateHomeCommand { get; }
+        public ICommand NavigateCreateSIMCommand { get; }
+
         // Constructor
-        public SIMCardViewModel(NavigationStore navigationStore)
+        public SIMCardViewModel()
         {
-            NavigateHomeCommand = new NavigateHomeCommand(navigationStore);
             LoadSimCardsCommand = new RelayCommand(_ => LoadSimCards());
             LoadSimCards();
         }

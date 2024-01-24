@@ -60,7 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\NavigateCommand.cs" />
-    <Compile Include="Commands\NavigateHomeCommand.cs" />
+    <Compile Include="Commands\NavigateCreateSIMCommand.cs" />
     <Compile Include="Commands\NavigateSIMCommand.cs" />
     <Compile Include="Common\ViewModel\HomeViewModel.cs" />
     <Compile Include="Common\ViewModel\MainViewModel.cs" />
@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Features\SIMType\Views\List\SIMCardTypeListViewModel.cs" />
     <Compile Include="Services\Database\Connector.cs" />
+    <Compile Include="Services\Navigation\NavigationService.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Page Include="Common\View\HomeView.xaml">
       <SubType>Designer</SubType>

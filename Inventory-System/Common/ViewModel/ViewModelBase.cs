@@ -11,7 +11,7 @@ namespace Inventory_System.Common.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void RaisePropertyChanged(string property)
+        public void RaisePropertyChanged(string property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }

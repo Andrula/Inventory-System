@@ -29,7 +29,7 @@ namespace Inventory_System.Data.Repositories.SIM
             List<simcard> simcards = new List<simcard>();
             using (SqlConnection connection = new SqlConnection(SysConfig.GetConnectionString))
             {
-                await connection.OpenAsync();
+                connection.Open();
 
                 using (SqlCommand command = new SqlCommand(GetAll, connection))
                 {
@@ -58,7 +58,7 @@ namespace Inventory_System.Data.Repositories.SIM
                 SIMTYPE = new simtype
                 {
                     id = Convert.ToInt32(reader["id"]),
-                    simType = Convert.ToString(reader["typename"])
+                    simType = reader["typename"] != DBNull.Value ? Convert.ToString(reader["typename"]) : null
                 }
             };
         }

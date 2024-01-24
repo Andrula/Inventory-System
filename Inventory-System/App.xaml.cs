@@ -19,7 +19,7 @@ namespace Inventory_System
         {
             NavigationStore navigationStore = new NavigationStore();
 
-            navigationStore.CurrentViewModel = new HomeViewModel();
+            navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
 
             MainWindow = new MainWindow()
             {

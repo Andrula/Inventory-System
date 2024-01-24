@@ -1,4 +1,5 @@
-﻿using Inventory_System.Stores;
+﻿using Inventory_System.Commands;
+using Inventory_System.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,12 @@ namespace Inventory_System.Common.ViewModel
 {
     public class HomeViewModel : ViewModelBase
     {
+        private readonly NavigationStore _navigationStore;
         public ICommand NavigateSIMCommand { get; }
-        public HomeViewModel() 
+        public HomeViewModel(NavigationStore navigationStore) 
         {
-
+            _navigationStore = navigationStore;
+            NavigateSIMCommand = new NavigateSIMCommand(_navigationStore);
         }
 
     }

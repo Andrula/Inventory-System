@@ -1,24 +1,26 @@
-﻿using Inventory_System.Common.ViewModel;
-using Inventory_System.Features.SIMCard.Views.List;
-using Inventory_System.Stores;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// User defined
+using Inventory_System.Stores;
+using Inventory_System.Features.SIMCard.Views.List;
+
 namespace Inventory_System.Commands
 {
-    public class NavigateHomeCommand : CommandBase
+    public class NavigateCreateSIMCommand : CommandBase
     {
         private readonly NavigationStore _navigationStore;
-        public NavigateHomeCommand(NavigationStore navigationStore)
+        public NavigateCreateSIMCommand(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
         }
+
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new HomeViewModel();
+            _navigationStore.CurrentViewModel = new SIMCardViewModel();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Inventory_System.Commands
 
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new SIMCardViewModel(_navigationStore);
+            _navigationStore.CurrentViewModel = new SIMCardViewModel();
         }
     }
 }
