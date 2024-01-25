@@ -3,14 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Inventory_System.Common.View"
+             xmlns:local="clr-namespace:Inventory_System.Common.View" 
+             xmlns:controls="clr-namespace:Inventory_System.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="Hej med dig" FontSize="30"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        <StackPanel >
-            <Button Content="SIM-Card" Command="{Binding NavigateSIMCommand}"/>
-        </StackPanel>
+        <controls:NavigationBar Grid.Row="1"/>
+
     </Grid>
 </UserControl>
