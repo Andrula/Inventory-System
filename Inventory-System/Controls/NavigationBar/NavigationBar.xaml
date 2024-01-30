@@ -2,14 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Inventory_System.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <local:NavigationBarViewModel/>
-    </UserControl.DataContext>
-    
+
     <Grid>
         <Ribbon WindowIconVisibility="Collapsed">
             <Ribbon.Resources>
@@ -19,7 +15,50 @@
             </Ribbon.Resources>
             <RibbonTab Header="Homepage">
                 <RibbonGroup VerticalAlignment="Stretch">
-                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <RibbonButton 
+                            Label="General" 
+                            Grid.Row="0" 
+                            Margin="5,5,5,0"/>
+                        
+                        <RibbonButton 
+                            Label="SIM-Card" 
+                            Grid.Row="1" 
+                            Margin="5,5,5,0"
+                            Command="{Binding NavigateSIMCommand}"/>
+                        
+                        <RibbonButton 
+                            Label="Loan" 
+                            Grid.Row="2" 
+                             Margin="5,5,5,0"/>
+                    </Grid>
+                </RibbonGroup>
+                <RibbonGroup Header="Equipment">
+                    <RibbonButton
+                        Style="{StaticResource RibbonButtonMenu}"
+                        Label="Create"
+                        Command=""
+                        CommandParameter=""/>
+                    <RibbonButton 
+                        Style="{StaticResource RibbonButtonMenu}"
+                        Label="Edit"
+                        Command=""
+                        CommandParameter=""/>
+                    <RibbonButton 
+                        Style="{StaticResource RibbonButtonMenu}"
+                        Label="Delete"
+                        Command=""
+                        CommandParameter=""/>
                 </RibbonGroup>
             </RibbonTab>
 
@@ -27,6 +66,5 @@
                Header="Backend" Margin="0,-5,0,5"/>
 
         </Ribbon>
-
     </Grid>
 </UserControl>

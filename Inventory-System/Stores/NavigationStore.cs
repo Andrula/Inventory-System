@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Inventory_System.Stores
 {
@@ -20,11 +21,28 @@ namespace Inventory_System.Stores
             }
         }
 
+        private UserControl _selectedEquipmentView;
+        public UserControl SelectedEquipmentView
+        {
+            get => _selectedEquipmentView;
+            set
+            {
+                _selectedEquipmentView = value;
+                OnSelectedEquipmentViewChanged();
+            }
+        }
+
         public event Action CurrentViewModelChanged;
+        public event Action SelectedEquipmentViewChanged;
 
         private void OnCurrentViewModelChanged()
         {
             CurrentViewModelChanged?.Invoke();
+        }
+
+        private void OnSelectedEquipmentViewChanged()
+        {
+            SelectedEquipmentViewChanged?.Invoke();
         }
     }
 }

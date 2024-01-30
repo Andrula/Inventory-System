@@ -1,44 +1,41 @@
-﻿using Inventory_System.Common.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Navigation;
+
+// USER DEFINED
+using Inventory_System.Commands;
+using Inventory_System.Common.ViewModel;
+using Inventory_System.Features.General.Views.List;
+using Inventory_System.Features.SIMCard.Views.List;
+using Inventory_System.Services.Navigation;
+using Inventory_System.Stores;
 
 namespace Inventory_System.Controls
 {
     public class NavigationBarViewModel : ViewModelBase
     {
-        private int _selectedEquipmentIndex = 0;
-
-        public int SelectedEquipmentIndex
+        public ICommand NavigateSIMCommand { get; }
+        public ICommand NavigateGeneralCommand { get; }
+        public ICommand NavigatePCCommand { get; }
+        public ICommand NavigatePhoneCommand { get; }
+        public ICommand NavigateTabletCommand { get; }
+        public NavigationBarViewModel(NavigationService<SIMCardViewModel> simNavigationService,
+            NavigationService<GeneralListViewModel> generalNavigationService)
         {
-            get { return _selectedEquipmentIndex; }
-            set
-            {
-                if (_selectedEquipmentIndex != value)
-                {
-                    _selectedEquipmentIndex = value;
-                    RaisePropertyChanged(nameof(SelectedEquipmentIndex));
-                }
-            }
-        }
+            NavigateSIMCommand = new NavigateCommand<SIMCardViewModel>(simNavigationService);
+            NavigateGeneralCommand = new NavigateCommand<GeneralListViewModel>(generalNavigationService);
 
-        // Add a property to get the selected equipment type based on the index
-        public string SelectedEquipmentType
-        {
-            get
-            {
-                string[] equipmentTypes = { "General", "PC", "Tablet", "Phone", "SIM-Card" };
+            // NEEDS IMPLEMENTATION 
+            //NavigatePCCommand = new NavigatePCCommand<PCViewModel>(PCNavigationService);
+            //NavigateTabletCommand = new NavigateTabletCommand<TabletViewModel>(TabletNavigationService);
+            //NavigatePhoneCommand = new NavigatePhoneCommand<PhoneViewModel>(PhoneNavigationService);
 
-                if (SelectedEquipmentIndex >= 0 && SelectedEquipmentIndex < equipmentTypes.Length)
-                {
-                    return equipmentTypes[SelectedEquipmentIndex];
-                }
-
-                return "General"; // Default to General if index is out of bounds
-            }
         }
     }
 }

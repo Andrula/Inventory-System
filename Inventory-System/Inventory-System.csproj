@@ -61,8 +61,6 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\NavigateCommand.cs" />
-    <Compile Include="Commands\NavigateCreateSIMCommand.cs" />
-    <Compile Include="Commands\NavigateSIMCommand.cs" />
     <Compile Include="Common\ViewModel\HomeViewModel.cs" />
     <Compile Include="Common\ViewModel\MainViewModel.cs" />
     <Compile Include="Common\View\HomeView.xaml.cs">
@@ -72,6 +70,10 @@
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\NavigationBar\NavigationBarViewModel.cs" />
+    <Compile Include="Features\General\Views\List\GeneralListView.xaml.cs">
+      <DependentUpon>GeneralListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\General\Views\List\GeneralListViewModel.cs" />
     <Compile Include="Features\SIMCard\Model\simcard.cs" />
     <Compile Include="Features\SIMCard\Views\List\SIMCardView.xaml.cs">
       <DependentUpon>SIMCardView.xaml</DependentUpon>
@@ -86,6 +88,7 @@
     </Compile>
     <Compile Include="Features\SIMType\Views\List\SIMCardTypeListViewModel.cs" />
     <Compile Include="Services\Database\Connector.cs" />
+    <Compile Include="Services\Navigation\INavigationService.cs" />
     <Compile Include="Services\Navigation\NavigationService.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Page Include="Common\View\HomeView.xaml">
@@ -120,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Features\General\Views\List\GeneralListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Features\SIMCard\Views\List\SIMCardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Features\SIMType\Views\List\SIMCardTypeListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Style\Style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

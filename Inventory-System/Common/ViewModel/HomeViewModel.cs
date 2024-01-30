@@ -1,23 +1,24 @@
 ﻿using Inventory_System.Commands;
+using Inventory_System.Controls;
+using Inventory_System.Interfaces.SIMcard.IRepository;
 using Inventory_System.Stores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace Inventory_System.Common.ViewModel
 {
     public class HomeViewModel : ViewModelBase
     {
-        private readonly NavigationStore _navigationStore;
-        public ICommand NavigateSIMCommand { get; }
-        public HomeViewModel(NavigationStore navigationStore) 
+        public NavigationBarViewModel NavigationBarViewModel { get; }
+        public HomeViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {
-            _navigationStore = navigationStore;
-            NavigateSIMCommand = new NavigateSIMCommand(_navigationStore);
+            NavigationBarViewModel = navigationBarViewModel;
         }
 
+
+   
+       
     }
 }

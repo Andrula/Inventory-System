@@ -17,9 +17,5 @@ namespace Inventory_System.Features.SIMCard.Model
 
         public simtype SIMTYPE { get; set; }
 
-        public override string ToString()
-        {
-            return $"{id} - {number} - {PIN} - {PUK} - {ICCID}";
-        }
     }
 }
