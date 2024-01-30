@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Inventory_System.Features.SIMCard.Views.List
+namespace Inventory_System.Controls
 {
     /// <summary>
-    /// Interaction logic for SIMCardView.xaml
+    /// Interaction logic for NavigationBar.xaml
     /// </summary>
-    public partial class SIMCardView : UserControl
+    public partial class NavigationBar : UserControl
     {
-        public SIMCardView()
+        public NavigationBar()
         {
             InitializeComponent();
         }

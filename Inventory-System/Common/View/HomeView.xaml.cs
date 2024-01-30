@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Inventory_System.Features.SIMCard.Views.List
+namespace Inventory_System.Common.View
 {
     /// <summary>
-    /// Interaction logic for SIMCardView.xaml
+    /// Interaction logic for HomeView.xaml
     /// </summary>
-    public partial class SIMCardView : UserControl
+    public partial class HomeView : UserControl
     {
-        public SIMCardView()
+        public HomeView()
         {
             InitializeComponent();
         }

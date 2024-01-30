@@ -1,7 +1,4 @@
-﻿using Inventory_System.Command;
-using Inventory_System.Common;
-using Inventory_System.Data.Repositories.SIM;
-using Inventory_System.Features.SIMCard.Model;
+﻿// System directives
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,13 +7,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+// User directives
+using Inventory_System.Command;
+using Inventory_System.Commands;
+using Inventory_System.Common.ViewModel;
+using Inventory_System.Controls;
+using Inventory_System.Data.Repositories.SIM;
+using Inventory_System.Features.SIMCard.Model;
+using Inventory_System.Stores;
+
 namespace Inventory_System.Features.SIMCard.Views.List
 {
     public class SIMCardViewModel : ViewModelBase
     {
+        public ICommand NavigateCreateSIMCommand { get; }
+
+        public int GridRow => 2;
+
         // Constructor
-        public SIMCardViewModel()
+
+        public NavigationBarViewModel NavigationBarViewModel { get; }
+        public SIMCardViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {
+            NavigationBarViewModel = navigationBarViewModel;
             LoadSimCardsCommand = new RelayCommand(_ => LoadSimCards());
             LoadSimCards();
         }

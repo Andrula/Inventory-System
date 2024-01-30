@@ -1,0 +1,21 @@
+﻿<Window x:Class="Inventory_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:viewmodels="clr-namespace:Inventory_System.Common.ViewModel"
+        xmlns:view="clr-namespace:Inventory_System.Common.View"
+        xmlns:simlistview="clr-namespace:Inventory_System.Features.SIMCard.Views.List"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <view:HomeView></view:HomeView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type simlistview:SIMCardViewModel}">
+                <simlistview:SIMCardView/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+</Window>
