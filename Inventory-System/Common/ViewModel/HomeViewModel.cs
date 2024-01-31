@@ -11,14 +11,28 @@ namespace Inventory_System.Common.ViewModel
 {
     public class HomeViewModel : ViewModelBase
     {
-        public NavigationBarViewModel NavigationBarViewModel { get; }
-        public HomeViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
+        private readonly NavigationStore _navigationStore;
+
+        public ViewModelBase _dynamicContent;
+        public ViewModelBase DynamicContent
         {
-            NavigationBarViewModel = navigationBarViewModel;
+            get => _dynamicContent;
+            private set
+            {
+                _dynamicContent = value;
+                RaisePropertyChanged(nameof(DynamicContent));
+            }
         }
 
+        public NavigationBarViewModel NavigationBarViewModel { get; }
 
-   
-       
+        public HomeViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
+        {
+            //_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+
+            NavigationBarViewModel = navigationBarViewModel;
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += () => DynamicContent = _navigationStore.CurrentViewModel;
+        }
     }
 }

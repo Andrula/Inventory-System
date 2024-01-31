@@ -12,9 +12,10 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <controls:NavigationBar Grid.Row="1" DataContext="{Binding NavigationBarViewModel}"/>
+        <!-- Persistent navigation bar -->
+        <controls:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBarViewModel}"/>
 
         <!-- Placeholder for the selected equipment view -->
-        <ContentControl Grid.Row="2" Content="{Binding SelectedEquipmentView}"/>
+        <ContentControl Grid.Row="1" Content="{Binding DynamicContent}"/>
     </Grid>
 </UserControl>
