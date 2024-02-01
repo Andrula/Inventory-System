@@ -22,10 +22,6 @@ namespace Inventory_System.Features.SIMCard.Views.List
     {
         public ICommand NavigateCreateSIMCommand { get; }
 
-        public int GridRow => 2;
-
-        // Constructor
-
         public NavigationBarViewModel NavigationBarViewModel { get; }
         public SIMCardViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {

@@ -34,7 +34,7 @@ namespace Inventory_System
             NavigationService<HomeViewModel> homeNavigationService = CreateHomeNavigationService();
             homeNavigationService.Navigate();
 
-            MainWindow = new MainWindow()
+            MainWindow = new MainWindow(_navigationBarViewModel)
             {
                 DataContext = new MainViewModel(_navigationStore)
             };
