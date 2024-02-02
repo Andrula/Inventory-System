@@ -20,12 +20,14 @@ namespace Inventory_System.Features.SIMCard.Views.List
 {
     public class SIMCardViewModel : ViewModelBase
     {
-        public ICommand NavigateCreateSIMCommand { get; }
+        private readonly NavigationStore _navigationStore;
+
 
         public NavigationBarViewModel NavigationBarViewModel { get; }
         public SIMCardViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {
             NavigationBarViewModel = navigationBarViewModel;
+            _navigationStore = navigationStore;
             LoadSimCardsCommand = new RelayCommand(_ => LoadSimCards());
             LoadSimCards();
         }
