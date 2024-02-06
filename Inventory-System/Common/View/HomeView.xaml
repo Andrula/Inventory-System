@@ -17,7 +17,7 @@
         <controls:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBarViewModel}"/>
 
         <!-- Dynamic Content Control -->
-        <ContentControl Background="Red" Grid.Row="1" Content="{Binding DynamicContent}">
+        <ContentControl Grid.Row="1" Content="{Binding DynamicContent}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type listview:SIMCardViewModel}">
                     <listview:SIMCardView/>
