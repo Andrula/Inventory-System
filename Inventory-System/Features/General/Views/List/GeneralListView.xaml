@@ -26,14 +26,12 @@
             HeadersVisibility="Column"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            ItemsSource="{Binding SIMCards}">
+            ItemsSource="{Binding GeneralList}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
-                    <DataGridTextColumn Header="Number" Binding="{Binding number}"/>
-                    <DataGridTextColumn Header="PIN" Binding="{Binding PIN}"/>
-                    <DataGridTextColumn Header="PUK" Binding="{Binding PUK}"/>
-                    <DataGridTextColumn Header="ICCID" Binding="{Binding ICCID}"/>
-                    <DataGridTextColumn Header="SIM Type" Binding="{Binding SIMTYPE.simType}" />
+                    <DataGridTextColumn Header="Type" Binding="{Binding number}"/>
+                    <DataGridTextColumn Header="Last time accounted" Binding="{Binding PIN}"/>
+                    
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

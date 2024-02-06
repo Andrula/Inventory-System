@@ -11,12 +11,12 @@ active_to DATE
 
 CREATE TABLE simcard (
 id INT IDENTITY (1,1) PRIMARY KEY,
-type_id int,
+simtype_id int,
 number NVARCHAR(100), 
 PIN NVARCHAR(100),
 PUK NVARCHAR(100),
 ICCID NVARCHAR(100),
-FOREIGN KEY (type_id) REFERENCES simtype(id)
+FOREIGN KEY (simtype_id) REFERENCES simtype(id)
 )
 
 CREATE TABLE brand (
@@ -81,7 +81,7 @@ active_to DATE
 
 CREATE TABLE tabletram (
 id INT IDENTITY (1,1) PRIMARY KEY,
-size INT,
+size NVARCHAR(250),
 active_from DATE,
 active_to DATE
 )
