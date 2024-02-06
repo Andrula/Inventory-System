@@ -21,6 +21,17 @@ namespace Inventory_System.Stores
             }
         }
 
+        //public ViewModelBase _dynamicContent;
+        //public ViewModelBase DynamicContent
+        //{
+        //    get => _dynamicContent;
+        //    private set
+        //    {
+        //        _dynamicContent = value;
+        //        OnCurrentViewModelChanged();
+        //    }
+        //}
+
         public event Action CurrentViewModelChanged;
 
         private void OnCurrentViewModelChanged()

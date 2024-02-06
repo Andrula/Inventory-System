@@ -1,5 +1,6 @@
 ﻿using Inventory_System.Commands;
 using Inventory_System.Controls;
+using Inventory_System.Features.SIMCard.Views.List;
 using Inventory_System.Interfaces.SIMcard.IRepository;
 using Inventory_System.Stores;
 using System.Collections.ObjectModel;
@@ -13,28 +14,22 @@ namespace Inventory_System.Common.ViewModel
     {
         private readonly NavigationStore _navigationStore;
 
-        public ViewModelBase _dynamicContent;
-        public ViewModelBase DynamicContent
-        {
-            get => _dynamicContent;
-            private set
-            {
-                _dynamicContent = value;
-                RaisePropertyChanged(nameof(DynamicContent));
-            }
-        }
-
         public NavigationBarViewModel NavigationBarViewModel { get; }
-        private NavigationStore _navigationStore { get; } 
         public HomeViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {
-            //_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-
             NavigationBarViewModel = navigationBarViewModel;
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+
+            // Set the initial view model to SIMCardViewModel
+            _navigationStore.CurrentViewModel = new SIMCardViewModel(navigationBarViewModel, navigationStore);
         }
 
+        private void OnCurrentViewModelChanged()
+        {
+            RaisePropertyChanged(nameof(DynamicContent));
+        }
 
-   
-       
+        public ViewModelBase DynamicContent => _navigationStore.CurrentViewModel;
     }
 }

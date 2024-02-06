@@ -21,8 +21,6 @@
         </Grid>
         <StackPanel Grid.Row="1" Height="Auto" HorizontalAlignment="Stretch">
             <DataGrid
-                Background="Red"
-                Margin="20"
                 Height="250px"
                 ColumnWidth="*"
                 HeadersVisibility="Column"
@@ -39,6 +37,5 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-
     </Grid>
 </UserControl>

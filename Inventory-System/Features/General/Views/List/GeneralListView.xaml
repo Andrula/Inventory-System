@@ -7,6 +7,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <StackPanel Grid.Row="1" Height="Auto" HorizontalAlignment="Stretch">
+            <DataGrid
+            Height="250px"
+            ColumnWidth="*"
+            HeadersVisibility="Column"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            ItemsSource="{Binding SIMCards}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
+                    <DataGridTextColumn Header="Number" Binding="{Binding number}"/>
+                    <DataGridTextColumn Header="PIN" Binding="{Binding PIN}"/>
+                    <DataGridTextColumn Header="PUK" Binding="{Binding PUK}"/>
+                    <DataGridTextColumn Header="ICCID" Binding="{Binding ICCID}"/>
+                    <DataGridTextColumn Header="SIM Type" Binding="{Binding SIMTYPE.simType}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>
