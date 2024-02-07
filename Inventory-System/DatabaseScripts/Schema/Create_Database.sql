@@ -1,23 +1,10 @@
-﻿CREATE DATABASE Polinventar;
+﻿--Database creation:
+Use master
+
+CREATE DATABASE Polinventar;
 
 USE Polinventar;
 
-CREATE TABLE simtype (
-id INT IDENTITY (1,1) PRIMARY KEY,
-type NVARCHAR(100),
-active_from DATE,
-active_to DATE
-)
-
-CREATE TABLE simcard (
-id INT IDENTITY (1,1) PRIMARY KEY,
-type_id int,
-number NVARCHAR(100), 
-PIN NVARCHAR(100),
-PUK NVARCHAR(100),
-ICCID NVARCHAR(100),
-FOREIGN KEY (type_id) REFERENCES simtype(id)
-)
 
 CREATE TABLE brand (
 id INT IDENTITY (1,1) PRIMARY KEY,
@@ -26,6 +13,26 @@ active_from DATE,
 active_to DATE
 )
 
+
+--SIM CARD Tabel:
+CREATE TABLE simtype (
+id INT IDENTITY (1,1) PRIMARY KEY,
+typename NVARCHAR(100),
+active_from DATE,
+active_to DATE
+)
+
+CREATE TABLE simcard (
+id INT IDENTITY (1,1) PRIMARY KEY,
+simtype_id int,
+number NVARCHAR(100), 
+PIN NVARCHAR(100),
+PUK NVARCHAR(100),
+ICCID NVARCHAR(100),
+FOREIGN KEY (simtype_id) REFERENCES simtype(id)
+)
+
+-- PC Tabel:
 CREATE TABLE pcmodel (
 id INT IDENTITY (1,1) PRIMARY KEY,
 name NVARCHAR(250),
@@ -72,6 +79,7 @@ FOREIGN KEY (sim_id) REFERENCES simcard(id),
 FOREIGN KEY (RAM_id) REFERENCES pcram(id),
 )
 
+-- Tablet Tabel:
 CREATE TABLE tabletmodel (
 id INT IDENTITY (1,1) PRIMARY KEY,
 name NVARCHAR(250),
@@ -79,14 +87,14 @@ active_from DATE,
 active_to DATE
 )
 
-CREATE TABLE tabletram (
+CREATE TABLE tabletsize (
 id INT IDENTITY (1,1) PRIMARY KEY,
-size INT,
+size NVARCHAR(250),
 active_from DATE,
 active_to DATE
 )
 
-CREATE TABLE tabletsize (
+CREATE TABLE tabletram (
 id INT IDENTITY (1,1) PRIMARY KEY,
 size INT,
 active_from DATE,
@@ -120,7 +128,7 @@ FOREIGN KEY (model_id) REFERENCES tabletmodel(id),
 FOREIGN KEY (sim_id) REFERENCES simcard(id),
 )
 
-
+-- Phone Tabel:
 CREATE TABLE phonemodel (
 id INT IDENTITY (1,1) PRIMARY KEY,
 name NVARCHAR(250),

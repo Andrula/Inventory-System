@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:Inventory_System.Controls" 
-             xmlns:listview="clr-namespace:Inventory_System.Features.SIMCard.Views.List"
+             xmlns:listview="clr-namespace:Inventory_System.Features.SIMCard.Views.List" 
+             xmlns:list="clr-namespace:Inventory_System.Features.General.Views.List"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -21,6 +22,9 @@
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type listview:SIMCardViewModel}">
                     <listview:SIMCardView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type list:GeneralViewModel}">
+                    <list:GeneralView/>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>

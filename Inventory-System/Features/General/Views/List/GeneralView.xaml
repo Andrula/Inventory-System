@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Inventory_System.Features.General.Views.List.GeneralListView"
+﻿<UserControl x:Class="Inventory_System.Features.General.Views.List.GeneralView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -26,16 +26,23 @@
             HeadersVisibility="Column"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            ItemsSource="{Binding SIMCards}">
+            ItemsSource="{Binding GeneralList}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
-                    <DataGridTextColumn Header="Number" Binding="{Binding number}"/>
-                    <DataGridTextColumn Header="PIN" Binding="{Binding PIN}"/>
-                    <DataGridTextColumn Header="PUK" Binding="{Binding PUK}"/>
-                    <DataGridTextColumn Header="ICCID" Binding="{Binding ICCID}"/>
-                    <DataGridTextColumn Header="SIM Type" Binding="{Binding SIMTYPE.simType}" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding DeviceID}"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding EquipmentType}"/>
+                    <DataGridTextColumn Header="Accounted for" Binding="{Binding LastTimeAccounted}"/>
+                    <DataGridTextColumn Header="WRX" Binding="{Binding WRX}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding PersonName}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
+                    <DataGridTextColumn Header="Active from" Binding="{Binding LoanActiveFrom}"/>
+                    <DataGridTextColumn Header="Active to" Binding="{Binding LoanActiveTo}"/>
+                    <DataGridTextColumn Header="Location" Binding="{Binding LocationName}"/>
+                    <DataGridTextColumn Header="Project" Binding="{Binding Project}"/>
+                    <DataGridTextColumn Header="Note" Binding="{Binding StatusNote}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
     </Grid>
 </UserControl>
+

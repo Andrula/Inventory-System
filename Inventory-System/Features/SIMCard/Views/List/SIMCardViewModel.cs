@@ -21,9 +21,8 @@ namespace Inventory_System.Features.SIMCard.Views.List
     public class SIMCardViewModel : ViewModelBase
     {
         private readonly NavigationStore _navigationStore;
-
-
         public NavigationBarViewModel NavigationBarViewModel { get; }
+        public ICommand LoadSimCardsCommand { get; }
         public SIMCardViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {
             NavigationBarViewModel = navigationBarViewModel;
@@ -42,9 +41,6 @@ namespace Inventory_System.Features.SIMCard.Views.List
                 RaisePropertyChanged(nameof(SIMCards));
             }
         }
-
-        public ICommand LoadSimCardsCommand { get; }
-        // Add other commands as needed
 
         private async void LoadSimCards()
         {

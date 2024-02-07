@@ -50,11 +50,11 @@ namespace Inventory_System
                 () => new HomeViewModel(_navigationBarViewModel, _navigationStore));
         }
 
-        private NavigationService<GeneralListViewModel> CreateGeneralNavigationService()
+        private NavigationService<GeneralViewModel> CreateGeneralNavigationService()
         {
-            return new NavigationService<GeneralListViewModel> (
+            return new NavigationService<GeneralViewModel> (
                 _navigationStore, 
-                () => new GeneralListViewModel(_navigationBarViewModel,_navigationStore));
+                () => new GeneralViewModel(_navigationBarViewModel,_navigationStore));
         }
 
         private NavigationService<SIMCardViewModel> CreateSIMNavigationService()

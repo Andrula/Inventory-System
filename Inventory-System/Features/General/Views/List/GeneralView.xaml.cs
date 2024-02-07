@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Inventory_System.Features.General.Views.List
 {
     /// <summary>
-    /// Interaction logic for GeneralListView.xaml
+    /// Interaction logic for GeneralView.xaml
     /// </summary>
-    public partial class GeneralListView : UserControl
+    public partial class GeneralView : UserControl
     {
-        public GeneralListView()
+        public GeneralView()
         {
             InitializeComponent();
         }

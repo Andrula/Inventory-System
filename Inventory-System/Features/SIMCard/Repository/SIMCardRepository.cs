@@ -18,11 +18,11 @@ namespace Inventory_System.Data.Repositories.SIM
 {
     public class SIMCardRepository : ISIMCardRepository
     {
-        private Connector connector;
+        private Connector _connector;
 
         public SIMCardRepository()
         {
-            connector = new Connector(SysConfig.GetConnectionString);
+            _connector = new Connector(SysConfig.GetConnectionString);
         }
         public async Task<IEnumerable<simcard>> GetAllInstancesAsync()
         {

@@ -25,17 +25,16 @@ namespace Inventory_System.Controls
         public ICommand NavigatePCCommand { get; }
         public ICommand NavigatePhoneCommand { get; }
         public ICommand NavigateTabletCommand { get; }
-        public NavigationBarViewModel(NavigationService<SIMCardViewModel> simNavigationService,
-            NavigationService<GeneralListViewModel> generalNavigationService)
+        public NavigationBarViewModel( NavigationService<SIMCardViewModel> simNavigationService,
+            NavigationService<GeneralViewModel> generalNavigationService)
         {
             NavigateSIMCommand = new NavigateCommand<SIMCardViewModel>(simNavigationService);
-            NavigateGeneralCommand = new NavigateCommand<GeneralListViewModel>(generalNavigationService);
+            NavigateGeneralCommand = new NavigateCommand<GeneralViewModel>(generalNavigationService);
 
             // NEEDS IMPLEMENTATION 
             //NavigatePCCommand = new NavigatePCCommand<PCViewModel>(PCNavigationService);
             //NavigateTabletCommand = new NavigateTabletCommand<TabletViewModel>(TabletNavigationService);
             //NavigatePhoneCommand = new NavigatePhoneCommand<PhoneViewModel>(PhoneNavigationService);
-
         }
     }
 }

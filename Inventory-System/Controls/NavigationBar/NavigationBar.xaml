@@ -14,36 +14,40 @@
                 </Style>
             </Ribbon.Resources>
             <RibbonTab Header="Homepage">
-                <RibbonGroup VerticalAlignment="Stretch">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-
-                        <RibbonButton 
-                            Label="General" 
-                            Grid.Row="0" 
-                            Margin="5,5,5,0"/>
-                        
-                        <RibbonButton 
-                            Label="SIM-Card" 
-                            Grid.Row="1" 
-                            Margin="5,5,5,0"
-                            Command="{Binding NavigateSIMCommand}"/>
-                        
-                        <RibbonButton 
-                            Label="Loan" 
-                            Grid.Row="2" 
-                             Margin="5,5,5,0"/>
-                    </Grid>
-                </RibbonGroup>
                 <RibbonGroup Header="Equipment">
+                    <RibbonButton 
+                        Style="{StaticResource RibbonButtonMenu}"
+                        Label="General" 
+                        Grid.Row="0" 
+                        Margin="5,5,5,0"
+                        Command="{Binding NavigateGeneralCommand}"/>
+
+                    <RibbonButton 
+                        Style="{StaticResource RibbonButtonMenu}"
+                        Label="SIM-Card" 
+                        Grid.Row="1" 
+                        Margin="5,5,5,0"
+                        Command="{Binding NavigateSIMCommand}"/>
+
+                    <RibbonButton 
+                        Style="{StaticResource RibbonButtonMenu}"
+                        Label="Tablet" 
+                        Grid.Row="2" 
+                        Margin="5,5,5,0"/>
+
+                                   <RibbonButton 
+                         Style="{StaticResource RibbonButtonMenu}"
+                         Label="Tablet" 
+                         Grid.Row="2" 
+                         Margin="5,5,5,0"/>
+                    <RibbonButton 
+                         Style="{StaticResource RibbonButtonMenu}"
+                         Label="Tablet" 
+                         Grid.Row="2" 
+                         Margin="5,5,5,0"/>
+                </RibbonGroup>
+                
+                <RibbonGroup Header="Edit menu">
                     <RibbonButton
                         Style="{StaticResource RibbonButtonMenu}"
                         Label="Create"
