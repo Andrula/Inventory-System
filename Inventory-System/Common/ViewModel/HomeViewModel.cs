@@ -1,5 +1,6 @@
 ﻿using Inventory_System.Commands;
 using Inventory_System.Controls;
+using Inventory_System.Features.General.Views.List;
 using Inventory_System.Features.SIMCard.Views.List;
 using Inventory_System.Interfaces.SIMcard.IRepository;
 using Inventory_System.Stores;
@@ -22,7 +23,7 @@ namespace Inventory_System.Common.ViewModel
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
 
             // Set the initial view model to SIMCardViewModel
-            _navigationStore.CurrentViewModel = new SIMCardViewModel(navigationBarViewModel, navigationStore);
+            _navigationStore.CurrentViewModel = new GeneralViewModel(navigationBarViewModel, navigationStore);
         }
 
         private void OnCurrentViewModelChanged()

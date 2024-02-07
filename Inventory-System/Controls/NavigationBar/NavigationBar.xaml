@@ -16,31 +16,31 @@
             <RibbonTab Header="Homepage">
                 <RibbonGroup Header="Equipment">
                     <RibbonButton 
-                        Style="{StaticResource RibbonButtonMenuOne}"
+                        Style="{StaticResource RibbonButtonMenu}"
                         Label="General" 
                         Grid.Row="0" 
                         Margin="5,5,5,0"/>
 
                     <RibbonButton 
-                        Style="{StaticResource RibbonButtonMenuOne}"
+                        Style="{StaticResource RibbonButtonMenu}"
                         Label="SIM-Card" 
                         Grid.Row="1" 
                         Margin="5,5,5,0"
                         Command="{Binding NavigateSIMCommand}"/>
 
                     <RibbonButton 
-                        Style="{StaticResource RibbonButtonMenuOne}"
+                        Style="{StaticResource RibbonButtonMenu}"
                         Label="Tablet" 
                         Grid.Row="2" 
                         Margin="5,5,5,0"/>
 
                                    <RibbonButton 
-                         Style="{StaticResource RibbonButtonMenuOne}"
+                         Style="{StaticResource RibbonButtonMenu}"
                          Label="Tablet" 
                          Grid.Row="2" 
                          Margin="5,5,5,0"/>
                     <RibbonButton 
-                         Style="{StaticResource RibbonButtonMenuOne}"
+                         Style="{StaticResource RibbonButtonMenu}"
                          Label="Tablet" 
                          Grid.Row="2" 
                          Margin="5,5,5,0"/>

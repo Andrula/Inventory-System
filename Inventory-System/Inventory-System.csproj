@@ -72,10 +72,10 @@
     <Compile Include="Controls\NavigationBar\NavigationBarViewModel.cs" />
     <Compile Include="Features\General\Model\GeneralEquipmentItem.cs" />
     <Compile Include="Features\General\Repository\GeneralRepository.cs" />
-    <Compile Include="Features\General\Views\List\GeneralListView.xaml.cs">
-      <DependentUpon>GeneralListView.xaml</DependentUpon>
+    <Compile Include="Features\General\Views\List\GeneralView.xaml.cs">
+      <DependentUpon>GeneralView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Features\General\Views\List\GeneralListViewModel.cs" />
+    <Compile Include="Features\General\Views\List\GeneralViewModel.cs" />
     <Compile Include="Features\PC\Repository\PCRepository.cs" />
     <Compile Include="Features\Phone\Repository\PhoneRepository.cs" />
     <Compile Include="Features\SIMCard\Model\simcard.cs" />
@@ -128,7 +128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Features\General\Views\List\GeneralListView.xaml">
+    <Page Include="Features\General\Views\List\GeneralView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
