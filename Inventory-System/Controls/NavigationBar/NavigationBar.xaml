@@ -19,7 +19,8 @@
                         Style="{StaticResource RibbonButtonMenu}"
                         Label="General" 
                         Grid.Row="0" 
-                        Margin="5,5,5,0"/>
+                        Margin="5,5,5,0"
+                        Command="{Binding NavigateGeneralCommand}"/>
 
                     <RibbonButton 
                         Style="{StaticResource RibbonButtonMenu}"
