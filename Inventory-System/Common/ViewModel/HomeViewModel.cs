@@ -14,23 +14,20 @@ namespace Inventory_System.Common.ViewModel
     public class HomeViewModel : ViewModelBase
     {
         private readonly NavigationStore _navigationStore;
-
         public NavigationBarViewModel NavigationBarViewModel { get; }
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
         public HomeViewModel(NavigationBarViewModel navigationBarViewModel, NavigationStore navigationStore)
         {
             NavigationBarViewModel = navigationBarViewModel;
             _navigationStore = navigationStore;
-            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-
             // Set the initial view model to SIMCardViewModel
             _navigationStore.CurrentViewModel = new GeneralViewModel(navigationBarViewModel, navigationStore);
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
-
         private void OnCurrentViewModelChanged()
         {
-            RaisePropertyChanged(nameof(DynamicContent));
+            RaisePropertyChanged(nameof(CurrentViewModel));
         }
 
-        public ViewModelBase DynamicContent => _navigationStore.CurrentViewModel;
     }
 }

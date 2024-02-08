@@ -1,4 +1,5 @@
-﻿using Inventory_System.Stores;
+﻿using Inventory_System.Controls;
+using Inventory_System.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,6 @@ namespace Inventory_System.Common.ViewModel
         public MainViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
-
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
