@@ -26,14 +26,20 @@ namespace Inventory_System.Common.View
     /// </summary>
     public partial class HomeView : UserControl
     {
-        //private readonly NavigationService<SIMCardViewModel> simNavigationService;
-        //private readonly NavigationService<GeneralViewModel> generalNavigationService;
+        private readonly NavigationService<SIMCardViewModel> simNavigationService;
+        private readonly NavigationService<GeneralViewModel> generalNavigationService;
         public HomeView()
         {
             InitializeComponent();
 
-            //var navigationStore = new NavigationStore();
-            //this.DataContext = new HomeViewModel(navigationBarViewModel, navigationStore);
+            var navigationStore = new NavigationStore();
+
+            var navigationBarViewModel = new NavigationBarViewModel(simNavigationService,generalNavigationService);
+
+            this.DataContext = new HomeViewModel(navigationBarViewModel, navigationStore, simNavigationService);
+
+            // If you need to set an initial ViewModel, do it after the DataContext is set
+            navigationStore.CurrentViewModel = new GeneralViewModel(navigationBarViewModel, navigationStore, simNavigationService);
         }
     }
 }

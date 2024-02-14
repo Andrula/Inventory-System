@@ -15,6 +15,7 @@ namespace Inventory_System.Common.ViewModel
         public MainViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
+
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
@@ -24,3 +25,4 @@ namespace Inventory_System.Common.ViewModel
         }
     }
 }
+

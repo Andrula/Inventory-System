@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:controls="clr-namespace:Inventory_System.Controls" 
              xmlns:listview="clr-namespace:Inventory_System.Features.SIMCard.Views.List" 
-             xmlns:list="clr-namespace:Inventory_System.Features.General.Views.List"
+             xmlns:list="clr-namespace:Inventory_System.Features.General.Views.List" 
+             xmlns:viewmodel="clr-namespace:Inventory_System.Common.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:HomeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>

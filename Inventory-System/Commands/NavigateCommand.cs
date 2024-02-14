@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_System.Commands
 {
-    public class NavigateCommand<TViewModel> : CommandBase
-        where TViewModel : ViewModelBase
+    public class NavigateCommand<TViewModel> : CommandBase where TViewModel : ViewModelBase
     {
         private readonly NavigationService<TViewModel> _navigationService;
 

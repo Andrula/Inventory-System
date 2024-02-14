@@ -2,15 +2,12 @@
 using Inventory_System.Stores;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Navigation;
 
 namespace Inventory_System.Services.Navigation
 {
-    public class NavigationService<TViewModel>
-        where TViewModel : ViewModelBase
+    public class NavigationService<TViewModel> : INavigationService where TViewModel : ViewModelBase
     {
         private readonly NavigationStore _navigationStore;
         private readonly Func<TViewModel> _createViewModel;

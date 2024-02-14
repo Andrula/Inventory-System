@@ -2,6 +2,7 @@
 using Inventory_System.Common.ViewModel;
 using Inventory_System.Controls;
 using Inventory_System.Features.SIMCard.Views.List;
+using Inventory_System.Services.Navigation;
 using Inventory_System.Stores;
 using System;
 using System.Collections.Generic;
@@ -25,18 +26,9 @@ namespace Inventory_System
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly NavigationStore _navigationStore;
-        private readonly NavigationBarViewModel _navigationBarViewModel;
-        public MainWindow(NavigationBarViewModel navBarViewModel)
+        public MainWindow()
         {
             InitializeComponent();
-
-            // Initialize the NavigationStore
-            _navigationStore = new NavigationStore(); // Or retrieve it from App.xaml.cs if it's already created
-            _navigationBarViewModel = navBarViewModel;
-
-            homeView.DataContext = new HomeViewModel(_navigationBarViewModel, _navigationStore);
         }
-        public SIMCardViewModel SIMCardViewModel { get; set; }
     }
 }

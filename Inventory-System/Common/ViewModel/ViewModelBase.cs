@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory_System.Common.ViewModel
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -15,5 +15,7 @@ namespace Inventory_System.Common.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
+
+        public virtual void Dispose() { }
     }
 }

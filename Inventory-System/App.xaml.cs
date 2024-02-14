@@ -34,7 +34,7 @@ namespace Inventory_System
             NavigationService<HomeViewModel> homeNavigationService = CreateHomeNavigationService();
             homeNavigationService.Navigate();
 
-            MainWindow = new MainWindow(_navigationBarViewModel)
+            MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_navigationStore)
             };
@@ -47,14 +47,14 @@ namespace Inventory_System
         {
             return new NavigationService<HomeViewModel>(
                 _navigationStore,
-                () => new HomeViewModel(_navigationBarViewModel, _navigationStore));
+                () => new HomeViewModel(_navigationBarViewModel, _navigationStore,CreateSIMNavigationService()));
         }
 
         private NavigationService<GeneralViewModel> CreateGeneralNavigationService()
         {
             return new NavigationService<GeneralViewModel> (
                 _navigationStore, 
-                () => new GeneralViewModel(_navigationBarViewModel,_navigationStore));
+                () => new GeneralViewModel(_navigationBarViewModel,_navigationStore,CreateSIMNavigationService()));
         }
 
         private NavigationService<SIMCardViewModel> CreateSIMNavigationService()
